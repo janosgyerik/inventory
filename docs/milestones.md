@@ -17,9 +17,9 @@ Only what is written here, exactly as written, nothing more!
 
 + Can view list of Material
 
-- Can enter Product with Material and unit
++ Can enter Product with Material and unit
 
-- For each Product, show linked Materials
++ For each Product, show linked Materials
 
 - For each Material, show linked Products
 
