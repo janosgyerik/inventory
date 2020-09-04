@@ -21,7 +21,7 @@ Only what is written here, exactly as written, nothing more!
 
 + For each Product, show linked Materials
 
-- For each Material, show linked Products
++ For each Material, show linked Products
 
 Demo time!
 
