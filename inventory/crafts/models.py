@@ -49,3 +49,13 @@ class ProductMaterial(models.Model):
 
     def __str__(self):
         return f"{self.product} - {self.material} - {self.units}"
+
+
+class ProductTag(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    tag = models.CharField(max_length=50)
+    created_at = models.DateTimeField(default=now, blank=True)
+    updated_at = models.DateTimeField(default=now, blank=True)
+
+    def __str__(self):
+        return self.tag
