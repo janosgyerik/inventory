@@ -1,15 +1,34 @@
 Milestones
 ==========
 
+Current TODO list and notable milestones.
 
-First demo for Vika
--------------------
+TODO
+----
+
+- Always available on nuc: cron + screen
+- Self-update on nuc: cron + git pull + ./manage.sh migrate
+- Add material cost on Product page
+- Add Product action to clone
+- Add Material action to buy package, with history tracking
+- Add view to see total expenses
+- Add view to see total profits
+
+Demo 2
+------
+
+- TODO
+
+Demo 1
+------
+
+September 4, 2020.
 
 Keep it simple stupid. Seriously!
 
 Only what is written here, exactly as written, nothing more!
 
-- Ready to run on nuc
++ Ready to run on nuc
 
 + Login as admin/admin
 
@@ -23,9 +42,4 @@ Only what is written here, exactly as written, nothing more!
 
 + For each Material, show linked Products
 
-Demo time!
-
-Later
------
-
-- Always available on nuc (cron + screen)
++ Add material cost on Product listing page

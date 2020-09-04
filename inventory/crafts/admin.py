@@ -12,6 +12,7 @@ class MaterialInline(admin.TabularInline):
 class ProductAdmin(admin.ModelAdmin):
     inlines = [MaterialInline]
     exclude = ['created_at', 'updated_at']
+    list_display = ['name', 'stock', 'compute_cost']
 
 
 class ProductInline(admin.TabularInline):
@@ -32,6 +33,7 @@ class ProductInline(admin.TabularInline):
 class MaterialAdmin(admin.ModelAdmin):
     inlines = [ProductInline]
     exclude = ['created_at', 'updated_at']
+    list_display = ['name', 'price_per_package', 'units_per_package', 'stock']
 
 
 admin.site.register(Material, MaterialAdmin)

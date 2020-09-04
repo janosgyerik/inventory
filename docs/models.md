@@ -33,7 +33,7 @@ Actions:
 
 - Start making: remove the required units from Materials
 - Done making: update stock: +1
-- Sold for X: update stock: -1; record the Sale
+- Sold (for target price): update stock: -1; record the Sale
 - Clone: make a clone of this product to customize
 
 ### Material

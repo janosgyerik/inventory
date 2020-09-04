@@ -12,6 +12,9 @@ class Material(models.Model):
     created_at = models.DateTimeField(default=now, blank=True)
     updated_at = models.DateTimeField(default=now, blank=True)
 
+    def compute_cost(self, units):
+        return units * self.price_per_package / self.units_per_package
+
     def __str__(self):
         return self.name
 
@@ -27,6 +30,9 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
+    def compute_cost(self):
+        return sum(pm.compute_cost() for pm in self.productmaterial_set.all())
+
 
 class ProductMaterial(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
@@ -34,6 +40,9 @@ class ProductMaterial(models.Model):
     units = models.FloatField()
     created_at = models.DateTimeField(default=now, blank=True)
     updated_at = models.DateTimeField(default=now, blank=True)
+
+    def compute_cost(self):
+        return self.material.compute_cost(self.units)
 
     def __str__(self):
         return f"{self.product} - {self.material} - {self.units}"
