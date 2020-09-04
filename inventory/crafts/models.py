@@ -24,6 +24,7 @@ class Product(models.Model):
     hours_to_make = models.FloatField(blank=True, null=True)
     target_price = models.FloatField(blank=True, null=True)
     stock = models.IntegerField(help_text=_("Available items to sell"), default=0)
+    memo = models.TextField(blank=True)
     created_at = models.DateTimeField(default=now, blank=True)
     updated_at = models.DateTimeField(default=now, blank=True)
 
