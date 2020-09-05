@@ -12,12 +12,12 @@ class MaterialInline(admin.TabularInline):
 class ProductTagInline(admin.TabularInline):
     model = ProductTag
     exclude = ['created_at', 'updated_at']
-    extra = 2
+    extra = 3
 
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    inlines = [MaterialInline, ProductTagInline]
+    inlines = [ProductTagInline, MaterialInline]
     exclude = ['created_at', 'updated_at']
     list_display = ['name', 'sku', 'tags', 'stock', 'compute_cost']
     list_filter = ['producttag']
@@ -44,12 +44,12 @@ class ProductInline(admin.TabularInline):
 class MaterialTagInline(admin.TabularInline):
     model = MaterialTag
     exclude = ['created_at', 'updated_at']
-    extra = 2
+    extra = 3
 
 
 @admin.register(Material)
 class MaterialAdmin(admin.ModelAdmin):
-    inlines = [ProductInline, MaterialTagInline]
+    inlines = [MaterialTagInline, ProductInline]
     exclude = ['created_at', 'updated_at']
     list_display = ['name', 'sku', 'tags', 'price_per_package', 'units_per_package', 'stock']
 
