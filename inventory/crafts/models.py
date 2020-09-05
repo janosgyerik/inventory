@@ -6,6 +6,7 @@ from django.utils.translation import gettext as _
 class Material(models.Model):
     name = models.CharField(max_length=250)
     sku = models.CharField(max_length=50, blank=True)
+    size = models.CharField(max_length=100, blank=True)
     price_per_package = models.FloatField()
     units_per_package = models.FloatField()
     vendor_url = models.URLField(help_text=_("Vendor / website URL to buy more"), blank=True, null=True)
@@ -34,6 +35,7 @@ class MaterialTag(models.Model):
 class Product(models.Model):
     name = models.CharField(max_length=250)
     sku = models.CharField(max_length=50, blank=True)
+    size = models.CharField(max_length=100, blank=True)
     hours_to_make = models.FloatField(blank=True, null=True)
     target_price = models.FloatField(blank=True, null=True)
     stock = models.IntegerField(help_text=_("Available items to sell"), default=0)

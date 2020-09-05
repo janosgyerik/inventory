@@ -12,11 +12,20 @@ TODO
 - Add view to see total expenses
 - Add view to see total profits
 
+Demo 3
+------
+
+- Make tag filter use unique values on Product listing
+- Add tag filter for Material listing
+- Make it possible to add tags as comma separated values
+- Add material cost on Product page
+- Hide trailing ".0" from numbers
+- Align view of price per package to make their magnitude easier to see at a glance
+
 Demo 2
 ------
 
 + Make the linked material list searchable
-- Add material cost on Product page
 + Add per-package units to Material name
 + Enrich list views with all relevant fields
 + Add Tag for Material
