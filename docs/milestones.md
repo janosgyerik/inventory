@@ -18,7 +18,7 @@ Demo 3
 
 + Make tag filter use unique values on Product listing
 + Add tag filter for Material listing
-- Make material listing columns more compact
++ Make material listing columns more compact
 - Make it possible to hide the Material filter
 - Hide trailing ".0" from numbers
 - Make it possible to add tags as comma separated values

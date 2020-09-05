@@ -1,0 +1,20 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Inventory admin') }}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('Inventory administration') }}</a></h1>
+{% endblock %}
+
+{% block extrastyle %}
+<style>
+td.field-units_per_p,
+td.field-price_per_p,
+td.field-stock
+{
+    text-align: right;
+}
+</style>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
