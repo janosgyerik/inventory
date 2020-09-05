@@ -17,7 +17,7 @@ class Material(models.Model):
         return units * self.price_per_package / self.units_per_package
 
     def __str__(self):
-        return self.name
+        return f"{self.name} ({self.units_per_package} units/package)"
 
 
 class Product(models.Model):
