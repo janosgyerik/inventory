@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.template.defaultfilters import truncatechars
 from django.utils.safestring import mark_safe
 
 from .models import Material, Product, ProductMaterial, ProductTag, MaterialTag
@@ -73,6 +74,18 @@ class MaterialAdmin(admin.ModelAdmin):
 
     def vendor_link(self, obj):
         if obj.vendor_url:
-            return mark_safe(f'<a href="{obj.vendor_url}">{obj.vendor_url}</a>')
+            return mark_safe(f'<a href="{obj.vendor_url}">{compact_url(obj.vendor_url)}</a>')
         else:
             return None
+
+
+def compact_url(url):
+    prefixes = ['https://', 'http://', 'www.']
+    for prefix in prefixes:
+        if url.startswith(prefix):
+            url = url[len(prefix):]
+
+    while url.endswith('/'):
+        url = url[:-1]
+
+    return truncatechars(url, 20)
