@@ -54,9 +54,19 @@ class MaterialTagInline(admin.TabularInline):
 class MaterialAdmin(admin.ModelAdmin):
     inlines = [MaterialTagInline, ProductInline]
     exclude = ['created_at', 'updated_at']
-    list_display = ['name', 'sku', 'size', 'tags', 'price_per_package', 'units_per_package', 'stock', 'vendor_link']
+    list_display = ['name', 'sku', 'size', 'tags', 'price_per_p', 'units_per_p', 'stock', 'vendor_link']
     list_filter = ['materialtag__tag']
     save_as = True
+
+    def price_per_p(self, obj):
+        return obj.price_per_package
+
+    price_per_p.short_description = 'Price/p'
+
+    def units_per_p(self, obj):
+        return obj.units_per_package
+
+    units_per_p.short_description = 'Units/p'
 
     def tags(self, obj):
         return ', '.join([pt.tag for pt in obj.materialtag_set.all()])
