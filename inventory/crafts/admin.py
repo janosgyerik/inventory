@@ -22,6 +22,7 @@ class ProductAdmin(admin.ModelAdmin):
     exclude = ['created_at', 'updated_at']
     list_display = ['name', 'sku', 'tags', 'stock', 'compute_cost']
     list_filter = ['producttag']
+    save_as = True
 
     def tags(self, obj):
         return ', '.join([pt.tag for pt in obj.producttag_set.all()])
