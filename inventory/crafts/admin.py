@@ -30,7 +30,7 @@ class ProductAdmin(admin.ModelAdmin):
         return ', '.join([pt.tag for pt in obj.producttag_set.all()])
 
     def cost(self, obj):
-        return obj.compute_cost()
+        return f"{obj.compute_cost():.2f}"
 
 
 class ProductInline(admin.TabularInline):
