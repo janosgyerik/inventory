@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.utils.safestring import mark_safe
 
 from .models import Material, Product, ProductMaterial, ProductTag, MaterialTag
 
@@ -51,7 +52,13 @@ class MaterialTagInline(admin.TabularInline):
 class MaterialAdmin(admin.ModelAdmin):
     inlines = [MaterialTagInline, ProductInline]
     exclude = ['created_at', 'updated_at']
-    list_display = ['name', 'sku', 'tags', 'price_per_package', 'units_per_package', 'stock']
+    list_display = ['name', 'sku', 'tags', 'price_per_package', 'units_per_package', 'stock', 'vendor_link']
 
     def tags(self, obj):
         return ', '.join([pt.tag for pt in obj.materialtag_set.all()])
+
+    def vendor_link(self, obj):
+        if obj.vendor_url:
+            return mark_safe(f'<a href="{obj.vendor_url}">{obj.vendor_url}</a>')
+        else:
+            return None
