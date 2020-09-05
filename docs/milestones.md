@@ -20,7 +20,7 @@ Demo 3
 + Add tag filter for Material listing
 + Make material listing columns more compact
 - Make it possible to hide the Material filter
-- Hide trailing ".0" from numbers
++ Drop trailing ".0" from numbers
 - Make it possible to add tags as comma separated values
 - Add material cost on Product page
 - Align view of price per package to make their magnitude easier to see at a glance

@@ -58,19 +58,24 @@ class MaterialTagInline(admin.TabularInline):
 class MaterialAdmin(admin.ModelAdmin):
     inlines = [MaterialTagInline, ProductInline]
     exclude = ['created_at', 'updated_at']
-    list_display = ['name', 'sku', 'size', 'tags', 'price_per_p', 'units_per_p', 'stock', 'vendor_link']
+    list_display = ['name', 'sku', 'size', 'tags', 'price_per_p', 'units_per_p', 'stock_uf', 'vendor_link']
     list_filter = ['materialtag__tag']
     save_as = True
 
     def price_per_p(self, obj):
-        return obj.price_per_package
+        return int_float(obj.price_per_package)
 
     price_per_p.short_description = 'Price/p'
 
     def units_per_p(self, obj):
-        return obj.units_per_package
+        return int_float(obj.units_per_package)
 
     units_per_p.short_description = 'Units/p'
+
+    def stock_uf(self, obj):
+        return int_float(obj.stock)
+
+    stock_uf.short_description = 'Stock'
 
     def tags(self, obj):
         return ', '.join([pt.tag for pt in obj.materialtag_set.all()])
@@ -92,3 +97,10 @@ def compact_url(url):
         url = url[:-1]
 
     return truncatechars(url, 20)
+
+
+def int_float(v):
+    can_be_int = int(v)
+    if can_be_int == v:
+        return can_be_int
+    return v
