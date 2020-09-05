@@ -14,14 +14,14 @@ Demo 2
 ------
 
 + Add per-package units to Material name
-- Enrich list views with all relevant fields
++ Enrich list views with all relevant fields
 - Add Tag for Material
 + Add memo for Material
 - Add Material action to clone
 - Add Product action to clone
+- Add material cost on Product page
 - Always available on nuc: cron + screen
 - Self-update on nuc: cron + git pull + ./manage.sh migrate
-- Add material cost on Product page
 
 Demo 1
 ------

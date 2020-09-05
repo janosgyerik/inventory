@@ -19,8 +19,11 @@ class ProductTagInline(admin.TabularInline):
 class ProductAdmin(admin.ModelAdmin):
     inlines = [MaterialInline, ProductTagInline]
     exclude = ['created_at', 'updated_at']
-    list_display = ['name', 'stock', 'compute_cost']
+    list_display = ['name', 'tags', 'sku', 'stock', 'compute_cost']
     list_filter = ['producttag']
+
+    def tags(self, obj):
+        return ', '.join([pt.tag for pt in obj.producttag_set.all()])
 
 
 class ProductInline(admin.TabularInline):
@@ -42,4 +45,4 @@ class ProductInline(admin.TabularInline):
 class MaterialAdmin(admin.ModelAdmin):
     inlines = [ProductInline]
     exclude = ['created_at', 'updated_at']
-    list_display = ['name', 'price_per_package', 'units_per_package', 'stock']
+    list_display = ['name', 'sku', 'price_per_package', 'units_per_package', 'stock']
