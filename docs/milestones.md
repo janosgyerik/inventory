@@ -6,22 +6,23 @@ Current TODO list and notable milestones.
 TODO
 ----
 
+- Always available on nuc: cron + screen
+- Self-update on nuc: cron + git pull + ./manage.sh migrate
 - Add Material action to buy package, with history tracking
 - Add view to see total expenses
 - Add view to see total profits
-- Add material cost on Product page
 
 Demo 2
 ------
 
++ Make the linked material list searchable
+- Add material cost on Product page
 + Add per-package units to Material name
 + Enrich list views with all relevant fields
 + Add Tag for Material
 + Add memo for Material
 + Add Material action to clone
 + Add Product action to clone
-- Always available on nuc: cron + screen
-- Self-update on nuc: cron + git pull + ./manage.sh migrate
 
 Demo 1
 ------

@@ -8,6 +8,7 @@ class MaterialInline(admin.TabularInline):
     model = ProductMaterial
     exclude = ['created_at', 'updated_at']
     extra = 1
+    raw_id_fields = ['material']
 
 
 class ProductTagInline(admin.TabularInline):
