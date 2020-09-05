@@ -17,7 +17,7 @@ Demo 2
 + Enrich list views with all relevant fields
 + Add Tag for Material
 + Add memo for Material
-- Add Material action to clone
++ Add Material action to clone
 - Add Product action to clone
 - Add material cost on Product page
 - Always available on nuc: cron + screen

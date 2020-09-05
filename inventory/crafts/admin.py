@@ -53,6 +53,7 @@ class MaterialAdmin(admin.ModelAdmin):
     inlines = [MaterialTagInline, ProductInline]
     exclude = ['created_at', 'updated_at']
     list_display = ['name', 'sku', 'tags', 'price_per_package', 'units_per_package', 'stock', 'vendor_link']
+    save_as = True
 
     def tags(self, obj):
         return ', '.join([pt.tag for pt in obj.materialtag_set.all()])
