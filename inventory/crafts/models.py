@@ -10,6 +10,7 @@ class Material(models.Model):
     units_per_package = models.FloatField()
     vendor_url = models.URLField(help_text=_("Vendor / website URL to buy more"), blank=True, null=True)
     stock = models.FloatField(help_text=_("Available units / amount"), default=0)
+    memo = models.TextField(blank=True)
     created_at = models.DateTimeField(default=now, blank=True)
     updated_at = models.DateTimeField(default=now, blank=True)
 
