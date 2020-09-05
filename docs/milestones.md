@@ -11,12 +11,13 @@ TODO
 - Add Material action to buy package, with history tracking
 - Add view to see total expenses
 - Add view to see total profits
+- Auto-complete from existing values for labels
 
 Demo 3
 ------
 
 + Make tag filter use unique values on Product listing
-- Add tag filter for Material listing
++ Add tag filter for Material listing
 - Make it possible to add tags as comma separated values
 - Add material cost on Product page
 - Hide trailing ".0" from numbers

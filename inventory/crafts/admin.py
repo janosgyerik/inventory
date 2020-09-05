@@ -55,6 +55,7 @@ class MaterialAdmin(admin.ModelAdmin):
     inlines = [MaterialTagInline, ProductInline]
     exclude = ['created_at', 'updated_at']
     list_display = ['name', 'sku', 'size', 'tags', 'price_per_package', 'units_per_package', 'stock', 'vendor_link']
+    list_filter = ['materialtag__tag']
     save_as = True
 
     def tags(self, obj):
