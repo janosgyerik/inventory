@@ -22,7 +22,7 @@ class ProductAdmin(admin.ModelAdmin):
     inlines = [ProductTagInline, MaterialInline]
     exclude = ['created_at', 'updated_at']
     list_display = ['name', 'sku', 'size', 'tags', 'stock', 'compute_cost']
-    list_filter = ['producttag']
+    list_filter = ['producttag__tag']
     save_as = True
 
     def tags(self, obj):

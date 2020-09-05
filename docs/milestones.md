@@ -15,7 +15,7 @@ TODO
 Demo 3
 ------
 
-- Make tag filter use unique values on Product listing
++ Make tag filter use unique values on Product listing
 - Add tag filter for Material listing
 - Make it possible to add tags as comma separated values
 - Add material cost on Product page
