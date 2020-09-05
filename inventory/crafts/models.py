@@ -21,6 +21,16 @@ class Material(models.Model):
         return f"{self.name} ({self.units_per_package} units/package)"
 
 
+class MaterialTag(models.Model):
+    material = models.ForeignKey(Material, on_delete=models.CASCADE)
+    tag = models.CharField(max_length=50)
+    created_at = models.DateTimeField(default=now, blank=True)
+    updated_at = models.DateTimeField(default=now, blank=True)
+
+    def __str__(self):
+        return self.tag
+
+
 class Product(models.Model):
     name = models.CharField(max_length=250)
     sku = models.CharField(max_length=50, blank=True)

@@ -15,7 +15,7 @@ Demo 2
 
 + Add per-package units to Material name
 + Enrich list views with all relevant fields
-- Add Tag for Material
++ Add Tag for Material
 + Add memo for Material
 - Add Material action to clone
 - Add Product action to clone
