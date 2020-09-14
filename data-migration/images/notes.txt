@@ -1,0 +1,23 @@
+The images in the cells are not as cell values, but as background fill.
+
+Copy-paste into other applications doesn't work, because the data pasted on the clipboard is in a format that doesn't make this possible. It's not any image format, but some sort of RTF. It can paste to other cells within Numbers, but not anywhere outside Numbers.
+
+Maybe the clipboard content can be converted to a bitmap, but it seems this is not at all straightforward, if at all possible.
+
+An alternative approach may be to extract the image content from the cell background fill, but couldn't find how to do that.
+One idea is to figure out inserting a background fill, which may be easier to find on internet, and then the reverse of the operation may be easier to figure out too.
+
+You can play with applescript using the Script Editor program. It's in Applications / Utilities.
+
+A very useful command to show info about stuff on the clipboard:
+
+    clipboard info
+
+See the scratch scripts in this dir, and in `/Library/Scripts`.
+
+Possibly useful links:
+
+https://iworkautomation.com/numbers/cell.html
+https://iworkautomation.com/numbers/cell-format.html
+https://iworkautomation.com/numbers/examples-table-as-image.html
+https://forum.keyboardmaestro.com/t/applescript-to-copy-and-paste-a-selection-in-numbers-app/11449/5
