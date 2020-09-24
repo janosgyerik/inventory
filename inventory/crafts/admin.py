@@ -81,8 +81,10 @@ class MaterialAdmin(admin.ModelAdmin):
         return ', '.join([pt.tag for pt in obj.materialtag_set.all()])
 
     def vendor_link(self, obj):
-        if obj.vendor_url:
-            return mark_safe(f'<a href="{obj.vendor_url}">{compact_url(obj.vendor_url)}</a>')
+        if obj.source:
+            if obj.source.startswith('http') or obj.source.startswith('www'):
+                return mark_safe(f'<a href="{obj.source}">{compact_url(obj.source)}</a>')
+            return compact_url(obj.source)
         else:
             return None
 
