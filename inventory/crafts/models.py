@@ -5,7 +5,7 @@ from django.utils.translation import gettext as _
 
 class Material(models.Model):
     name = models.CharField(max_length=250)
-    sku = models.CharField(max_length=50, blank=True)
+    sku = models.CharField(max_length=50, unique=True)
     size = models.CharField(max_length=100, blank=True)
     price_per_package = models.FloatField()
     units_per_package = models.FloatField()
@@ -34,7 +34,7 @@ class MaterialTag(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=250)
-    sku = models.CharField(max_length=50, blank=True)
+    sku = models.CharField(max_length=50, unique=True)
     size = models.CharField(max_length=100, blank=True)
     hours_to_make = models.FloatField(blank=True, null=True)
     target_price = models.FloatField(blank=True, null=True)

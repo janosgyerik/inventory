@@ -15,6 +15,7 @@ TODO
 Demo 4
 ------
 
++ Ensure all SKU values are unique
 - Make tag entry auto-complete from existing values
 - Make it possible to hide the Material filter
 - Make it possible to add tags as comma separated values
