@@ -3,9 +3,11 @@ import csv
 
 field_mapping = {
     'Code': 'sku',
+    'Ref.': 'sku',
     'Article': 'name',
     'Size': 'size',
     'N of pcs': 'units_per_package',
+    'N of units': 'units_per_package',
     'Price (€)': 'price_per_package',
     'Source': 'source',
     'Notes': 'memo',
@@ -40,7 +42,7 @@ class AdaptedRow:
 
 
 def is_valid_row(row):
-    return row['Code'] != ''
+    return row.get('Code', '') != '' or row.get('Ref.', '') != ''
 
 
 def rows_from_csv(path):
