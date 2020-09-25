@@ -18,6 +18,9 @@ def sanitize(model_field, orig_value):
     if model_field == 'price_per_package':
         return float(orig_value[1:].replace(',', '.'))
 
+    if model_field == 'units_per_package':
+        return float(orig_value.replace(',', '.'))
+
     return orig_value
 
 
